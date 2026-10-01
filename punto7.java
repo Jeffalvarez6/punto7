@@ -29,3 +29,29 @@ public class ColaClientesPrioridad {
         }
         return ocasionales.tomar();
     }
+    // (d) Eliminar primer elemento según prioridad
+    public void eliminarPrimero() {
+        if (!asiduos.estaVacia()) {
+            asiduos.eliminar();
+            nAsiduos--;
+        } else if (!ocasionales.estaVacia()) {
+            ocasionales.eliminar();
+            nOcasionales--;
+        }
+    }
+
+    // (e) Consultar número de clientes ocasionales
+    public int cantidadOcasionales() {
+        return nOcasionales;
+    }
+
+    // (f) Consultar número de clientes asiduos
+    public int cantidadAsiduos() {
+        return nAsiduos;
+    }
+
+    // (g) Consultar si está vacía la cola completa
+    public boolean estaVacia() {
+        return nAsiduos == 0 && nOcasionales == 0;
+    }
+}
